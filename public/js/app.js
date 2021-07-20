@@ -1,11 +1,11 @@
 const form = document.querySelector('form')
-const messageOne = document.querySelector('#message-1')
-const messageTwo = document.querySelector('#message-2')
+let messageOne = document.querySelector('#message-1')
+let messageTwo = document.querySelector('#message-2')
 
 form.addEventListener('submit', (e) => {
   e.preventDefault()
 
-  messageOne = 'Loading...'
+  messageOne.textContent = 'Loading...'
   messageTwo.textContent = ''
   
   fetch(`/weather?address=${e.target.location.value}`).then(res => {
